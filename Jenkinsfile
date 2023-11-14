@@ -20,7 +20,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh 'docker build -t sample_nodejs_application_image:${IMAGE_TAG}'
+          sh 'docker build -t sample_nodejs_application_image:${IMAGE_TAG} .'
         }
       }
     }
