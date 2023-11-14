@@ -28,8 +28,8 @@ pipeline {
     stage('Deploy') {
      steps{
         script {
-          sh 'docker stop jenkins-with-github-nodejs-cicd-container' || true
-          sh 'docker rm jenkins-with-github-nodejs-cicd-container' || true
+          sh 'docker stop jenkins-with-github-nodejs-cicd-container || true'
+          sh 'docker rm jenkins-with-github-nodejs-cicd-container || true'
           sh 'docker run -d -p 3000:3000 --name jenkins-with-github-nodejs-cicd-container sample_nodejs_application_image:${IMAGE_TAG}'
           sh 'echo "The Application is available on MachinePublicIP:3000"'
         }         
